@@ -1,10 +1,12 @@
 
-Core --> Application Service
+Core --> infrastructure / applications dependencies
 =====================
 
-This is where you place your business logic. You can reference the inne libraries as you wish.
-This is in most cases an empty library if your not making any kind of services to serve a front end.
+Implementation of interfaces and other necesary references from the core libraries goes here. Even though this a numbered as 5,
+it's not a part of the onion itself. This way you will be able to use different implementations of repositories and Databases,
+for the very same Domain.
 
-In a ASP.NET MVC context you may consider putting your controllers here...
+In DataAccess you handle your database access, implement the interfaces defined in the DomainServices.
 
-In case you wanna make a Web API this is where you place controllers, presenting DTO's for the client application. 
+Sometimes you may get some data from a third part API or where you wanna fusionate your own businesslogic,
+you can handle such data from third party API's in the Application Dependencies.
